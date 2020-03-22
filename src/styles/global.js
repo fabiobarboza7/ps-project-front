@@ -1,3 +1,4 @@
+// https://coolors.co/app/1a535c-4ecdc4-f7fff7-ff6b6b-ffe66d
 import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
@@ -23,7 +24,7 @@ export default createGlobalStyle`
   body {
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
     -webkit-font-smoothing: antialiased !important;
-    background-color: #fff;
+    background-color: #f2f2f2;
   }
 
   button {

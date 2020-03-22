@@ -6,7 +6,7 @@ import { userLoggedOut } from '~/store/modules/users/actions';
 
 import {
   Container,
-  DogLogo,
+  UserLogo,
   LogoContainer,
   HeaderTitle,
   LogoutButton,
@@ -23,9 +23,9 @@ export default function Header() {
   return (
     <Container>
       <LogoContainer>
-        <DogLogo />
+        <UserLogo />
       </LogoContainer>
-      <HeaderTitle>----Some title----</HeaderTitle>
+      <HeaderTitle>ME DIZ COMO</HeaderTitle>
       <LogoutButton onClick={() => handleLogout()} />
     </Container>
   );

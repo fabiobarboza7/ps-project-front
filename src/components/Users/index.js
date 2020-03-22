@@ -8,7 +8,6 @@ import {
   UserLogoBox,
   UserInfoBox,
   UserActionsBox,
-  UserLikeButton,
   UserTextBox,
   UserMessagesButton,
 } from './styles';
@@ -21,12 +20,11 @@ export default function Users() {
       </UserLogoBox>
       <UserInfoBox>
         <UserTextBox>
-          <UserDetails>Ração indefinida</UserDetails>
+          <UserDetails>Fulada da Silva</UserDetails>
           <UserLocation>São Paulo - SP</UserLocation>
         </UserTextBox>
         <UserActionsBox>
           <UserMessagesButton />
-          <UserLikeButton />
         </UserActionsBox>
       </UserInfoBox>
     </Container>

@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { toast } from 'react-toastify';
 
 import { userLogin } from '../../services/sessions.service';
 import { Store } from '../../store';
@@ -9,15 +10,20 @@ import {
   LoginForm,
   LoginInput,
   LoginButton,
-  LoginDogIcon,
   LoginButtonName,
+  LoginBanner,
 } from './styles';
 
 export default function Login() {
   const [, dispatch] = useContext(Store);
+
   async function handleSubmit(data) {
-    const response = await userLogin({ user: { ...data } });
-    dispatch(userStatus({ data: response }));
+    try {
+      const response = await userLogin({ user: { ...data } });
+      dispatch(userStatus({ data: response }));
+    } catch (e) {
+      toast.error('Usuário ou senha inválidos');
+    }
   }
 
   return (
@@ -26,23 +32,21 @@ export default function Login() {
         <LoginInput
           type="email"
           name="email"
-          placeholder="...your email"
+          placeholder="...seu email"
           required
         />
         <LoginInput
           type="password"
           name="password"
-          placeholder="...your password"
+          placeholder="...sua senha"
           required
         />
 
         <LoginButton type="submit">
-          <LoginButtonName>
-            Sign In
-            <LoginDogIcon />
-          </LoginButtonName>
+          <LoginButtonName>Sign In</LoginButtonName>
         </LoginButton>
       </LoginForm>
+      <LoginBanner />
     </Container>
   );
 }
