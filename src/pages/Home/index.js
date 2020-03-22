@@ -1,8 +1,7 @@
 import React from 'react';
 
-import Header from '~/components/Header';
-import Users from '~/components/Users';
-
+import Header from '../../components/Header';
+import Users from '../../components/Users';
 import { Main } from './styles';
 
 export default function Home() {
