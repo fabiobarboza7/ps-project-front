@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div``;
 
-export const LoginForm = styled(Form)`
+export const CreateForm = styled(Form)`
   margin: 0 20%;
   display: flex;
   justify-content: center;
@@ -20,10 +20,9 @@ export const LoginForm = styled(Form)`
     100% {
       transform: translateX(0);
     }
-  }
 `;
 
-export const LoginInput = styled(Input)`
+export const CreateInput = styled(Input)`
   font-family: 'Raleway', sans-serif;
   background-color: transparent;
   font-size: 28px;
@@ -40,7 +39,7 @@ export const LoginInput = styled(Input)`
   }
 `;
 
-export const LoginButton = styled.button`
+export const CreateButton = styled.button`
   font-family: 'Raleway', sans-serif;
   position: relative;
   margin-top: 20px;
@@ -61,4 +60,19 @@ export const LoginButton = styled.button`
   }
 `;
 
-export const LoginButtonName = styled.p``;
+export const CreateButtonName = styled.p``;
+
+export const GoToLogin = styled.p`
+  cursor: pointer;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  margin: 0 20%;
+  margin-top: 20px;
+  text-align: left;
+  color: #6c6ea0;
+  transition: 0.3s;
+  &:hover {
+    text-decoration: underline;
+  }
+`;

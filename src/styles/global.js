@@ -1,4 +1,4 @@
-// https://coolors.co/app/1a535c-4ecdc4-f7fff7-ff6b6b-ffe66d
+// https://coolors.co/ffffff-3dd6d0-15b097-333333-6c6ea0
 import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
@@ -18,7 +18,7 @@ export default createGlobalStyle`
   }
 
   html, body, #root {
-    min-height: 100vh;
+    min-height: 100%;
   }
 
   body {

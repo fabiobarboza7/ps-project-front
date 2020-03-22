@@ -11,7 +11,6 @@ import {
   LoginInput,
   LoginButton,
   LoginButtonName,
-  LoginBanner,
 } from './styles';
 
 export default function Login() {
@@ -43,10 +42,9 @@ export default function Login() {
         />
 
         <LoginButton type="submit">
-          <LoginButtonName>Sign In</LoginButtonName>
+          <LoginButtonName>ENTRAR</LoginButtonName>
         </LoginButton>
       </LoginForm>
-      <LoginBanner />
     </Container>
   );
 }

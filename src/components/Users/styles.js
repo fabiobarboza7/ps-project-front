@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import userLogo from '~/assets/img/user.png';
 
 export const Container = styled.div`
-  height: 250px;
+  height: 350px;
   cursor: pointer;
   background-color: #fff;
   border-radius: 10px;

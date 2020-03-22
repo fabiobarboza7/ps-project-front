@@ -1,13 +1,15 @@
 import React from 'react';
 
-import Login from '~/components/Login';
+import Registration from '~/components/Registration';
 
-import { Container } from './styles';
+import { Container, Banner } from './styles';
 
 export default function Root() {
   return (
     <Container>
-      <Login />
+      <Registration />
+
+      <Banner />
     </Container>
   );
 }
