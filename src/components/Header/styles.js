@@ -2,7 +2,7 @@ import { IoIosLogOut } from 'react-icons/io';
 
 import styled from 'styled-components';
 
-import userLogo from '~/assets/img/user.png';
+import userLogo from '../../assets/img/user.png';
 
 export const Container = styled.div`
   position: relative;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Registration from '~/components/Registration';
+import Registration from '../../components/Registration';
 
 import { Container, Banner } from './styles';
 

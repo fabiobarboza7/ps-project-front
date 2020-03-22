@@ -32,7 +32,7 @@ export default function Registration() {
     <Container>
       {!userExists ? (
         <>
-          <CreateForm schema={schema} onSubmit={handleSubmit}>
+          <CreateForm id="form" schema={schema} onSubmit={handleSubmit}>
             <CreateInput
               type="email"
               name="email"

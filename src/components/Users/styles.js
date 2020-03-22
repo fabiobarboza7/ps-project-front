@@ -3,7 +3,7 @@ import { TiMessages } from 'react-icons/ti';
 
 import styled from 'styled-components';
 
-import userLogo from '~/assets/img/user.png';
+import userLogo from '../../assets/img/user.png';
 
 export const Container = styled.div`
   height: 350px;

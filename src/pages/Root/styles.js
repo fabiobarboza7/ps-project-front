@@ -1,7 +1,7 @@
 // pallet https://coolors.co/app/ffffff-3dd6d0-15b097-513c2c-28190e
 import styled from 'styled-components';
 
-import logoBanner from '~/assets/img/banner-smaller.jpg';
+import logoBanner from '../../assets/img/banner-smaller.jpg';
 
 export const Container = styled.div`
   background-color: #fff;

@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 
-import { logout } from '~/services/logout.service';
-import { Store } from '~/store';
-import { userLoggedOut } from '~/store/modules/users/actions';
+import { logout } from '../../services/logout.service';
+import { Store } from '../../store';
+import { userLoggedOut } from '../../store/modules/users/actions';
 
 import {
   Container,
