@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useState, useContext } from 'react';
 
 import { toast } from 'react-toastify';
 import { userRegistration } from '../../services/registrations.service';
@@ -12,6 +12,7 @@ import {
   Container,
   CreateForm,
   CreateInput,
+  CreateInputImage,
   CreateButton,
   CreateButtonName,
   GoToLogin,
@@ -23,7 +24,7 @@ export default function Registration() {
 
   async function handleSubmit(data) {
     try {
-      const response = await userRegistration({ user: { ...data } });
+      const response = await userRegistration(data);
       dispatch(userStatus({ data: response }));
       history.push('/home');
     } catch (error) {
@@ -52,6 +53,8 @@ export default function Registration() {
               placeholder="...sua senha"
               required
             />
+
+            <CreateInputImage type="file" name="image" required />
 
             <CreateButton type="submit">
               <CreateButtonName>CRIAR</CreateButtonName>
