@@ -12,6 +12,7 @@ import {
   LoginButton,
   LoginButtonName,
 } from './styles';
+import history from '../../services/history';
 
 export default function Login() {
   const [, dispatch] = useContext(Store);
@@ -20,6 +21,9 @@ export default function Login() {
     try {
       const response = await userLogin({ user: { ...data } });
       dispatch(userStatus({ data: response }));
+      if (response.logged_in) {
+        history.push('/home');
+      }
     } catch (e) {
       toast.error('Usuário ou senha inválidos');
     }

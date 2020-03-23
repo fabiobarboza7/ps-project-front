@@ -1,10 +1,12 @@
 import React, { useContext, useState } from 'react';
 
+import { toast } from 'react-toastify';
 import { userRegistration } from '../../services/registrations.service';
 import { Store } from '../../store';
 import { userStatus } from '../../store/modules/users/actions';
 import Login from '../Login';
 import schema from './schema';
+import history from '../../services/history';
 // import { Container } from './styles';
 import {
   Container,
@@ -20,8 +22,13 @@ export default function Registration() {
   const [userExists, setUserExists] = useState(false);
 
   async function handleSubmit(data) {
-    const response = await userRegistration({ user: { ...data } });
-    dispatch(userStatus({ data: response }));
+    try {
+      const response = await userRegistration({ user: { ...data } });
+      dispatch(userStatus({ data: response }));
+      history.push('/home');
+    } catch (error) {
+      toast.error('Ops, houve algum erro, tente novamente');
+    }
   }
 
   function handleLogin() {
@@ -30,7 +37,7 @@ export default function Registration() {
 
   return (
     <Container>
-      {!userExists ? (
+      {userExists ? (
         <>
           <CreateForm id="form" schema={schema} onSubmit={handleSubmit}>
             <CreateInput

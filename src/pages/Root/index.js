@@ -8,7 +8,6 @@ export default function Root() {
   return (
     <Container>
       <Registration />
-
       <Banner />
     </Container>
   );

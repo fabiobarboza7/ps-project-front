@@ -9,22 +9,22 @@ import {
   UserInfoBox,
   UserActionsBox,
   UserTextBox,
-  UserMessagesButton,
+  UserMoreButton,
 } from './styles';
 
-export default function Users() {
+export default function Users({ skill, name, photo }) {
   return (
     <Container>
       <UserLogoBox>
-        <UserLogo />
+        <UserLogo src={photo} />
       </UserLogoBox>
       <UserInfoBox>
         <UserTextBox>
-          <UserDetails>Fulada da Silva</UserDetails>
-          <UserLocation>São Paulo - SP</UserLocation>
+          <UserDetails>{name}</UserDetails>
+          <UserLocation>{skill}</UserLocation>
         </UserTextBox>
         <UserActionsBox>
-          <UserMessagesButton />
+          <UserMoreButton />
         </UserActionsBox>
       </UserInfoBox>
     </Container>

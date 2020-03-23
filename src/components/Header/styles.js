@@ -22,8 +22,9 @@ export const UserLogo = styled.img.attrs({
   height: 100,
 })`
   position: absolute;
-  top: 23px;
+  top: 39px;
   border-radius: 50%;
+  border: 3px solid #3dd645;
 `;
 
 export const HeaderTitle = styled.h1`

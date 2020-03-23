@@ -11,13 +11,21 @@ import {
   HeaderTitle,
   LogoutButton,
 } from './styles';
+import history from '../../services/history';
 
 export default function Header() {
   const [, dispatch] = useContext(Store);
 
   async function handleLogout() {
-    const { logged_out } = await logout();
-    dispatch(userLoggedOut({ logged_out }));
+    try {
+      const { logged_out } = await logout();
+      dispatch(userLoggedOut({ logged_out }));
+      history.push('/');
+    } catch (error) {
+      return error;
+    }
+
+    return false;
   }
 
   return (
@@ -25,7 +33,7 @@ export default function Header() {
       <LogoContainer>
         <UserLogo />
       </LogoContainer>
-      <HeaderTitle>ME DIZ COMO</HeaderTitle>
+      <HeaderTitle />
       <LogoutButton onClick={() => handleLogout()} />
     </Container>
   );

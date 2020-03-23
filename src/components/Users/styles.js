@@ -1,9 +1,7 @@
 import { FaHeart } from 'react-icons/fa';
-import { TiMessages } from 'react-icons/ti';
+import { FiSearch } from 'react-icons/fi';
 
 import styled from 'styled-components';
-
-import userLogo from '../../assets/img/user.png';
 
 export const Container = styled.div`
   height: 350px;
@@ -19,10 +17,12 @@ export const Container = styled.div`
   &:hover {
     box-shadow: 0px 2px 4px 1px #ababab;
   }
+
+  position: relative;
 `;
 
 export const UserLogoBox = styled.div`
-  height: 50%;
+  height: 100%;
 `;
 
 export const UserInfoBox = styled.div`
@@ -34,14 +34,16 @@ export const UserInfoBox = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 `;
 
-export const UserLogo = styled.img.attrs({
-  src: userLogo,
-})`
-  height: auto;
+export const UserLogo = styled.img`
+  height: 100%;
   width: 100%;
-  object-position: top;
+  object-fit: cover;
+  object-position: center;
 `;
 
 export const UserTextBox = styled.div`
@@ -68,7 +70,7 @@ export const UserLikeButton = styled(FaHeart).attrs({
   color: #ff6b6b;
 `;
 
-export const UserMessagesButton = styled(TiMessages).attrs({
+export const UserMoreButton = styled(FiSearch).attrs({
   size: 30,
 })`
   color: #f7fff7;
