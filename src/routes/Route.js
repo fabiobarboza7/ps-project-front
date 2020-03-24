@@ -8,11 +8,16 @@ import { Store } from '../store';
 export default function RouteWrapper({
   component: Component,
   isPrivate = false,
+  path,
   ...rest
 }) {
   const [{ user }] = useContext(Store);
   if (!user.logged_in && isPrivate) {
     return <Redirect to="/" />;
+  }
+
+  if (user.logged_in && path === '/') {
+    return <Redirect to="/home" />;
   }
 
   if (!user.logged_in && !isPrivate) {
