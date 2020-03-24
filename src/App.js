@@ -14,13 +14,13 @@ function App() {
 
   useEffect(() => {
     async function checkLoginStatusService() {
-      const { logged_in } = await checkLoginStatus();
-      setStatus(logged_in);
+      const userStatus = await checkLoginStatus();
+      setStatus(userStatus);
       setLoad(true);
     }
 
     checkLoginStatusService();
-  });
+  }, []);
 
   return (
     load && (

@@ -17,6 +17,7 @@ import {
   CreateButtonName,
   GoToLogin,
 } from './styles';
+import { userLogin } from '../../services/sessions.service';
 
 export default function Registration() {
   const [, dispatch] = useContext(Store);
@@ -24,8 +25,14 @@ export default function Registration() {
 
   async function handleSubmit(data) {
     try {
-      const response = await userRegistration(data);
-      dispatch(userStatus({ data: response }));
+      console.log(data);
+      await userRegistration(data);
+
+      const { name, email, password } = data;
+
+      const login = await userLogin({ user: { name, email, password } });
+      dispatch(userStatus({ data: login }));
+
       history.push('/home');
     } catch (error) {
       toast.error('Ops, houve algum erro, tente novamente');
@@ -41,6 +48,12 @@ export default function Registration() {
       {userExists ? (
         <>
           <CreateForm id="form" schema={schema} onSubmit={handleSubmit}>
+            <CreateInput
+              type="string"
+              name="name"
+              placeholder="...seu nome"
+              required
+            />
             <CreateInput
               type="email"
               name="email"

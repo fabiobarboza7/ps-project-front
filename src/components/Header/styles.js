@@ -2,8 +2,6 @@ import { IoIosLogOut } from 'react-icons/io';
 
 import styled from 'styled-components';
 
-import userLogo from '../../assets/img/user.png';
-
 export const Container = styled.div`
   position: relative;
   display: flex;
@@ -16,11 +14,11 @@ export const Container = styled.div`
 
 export const LogoContainer = styled.div``;
 
-export const UserLogo = styled.img.attrs({
-  src: userLogo,
+export const UserLogo = styled.img.attrs(({ userIcon }) => ({
+  src: userIcon,
   width: 100,
   height: 100,
-})`
+}))`
   position: absolute;
   top: 39px;
   border-radius: 50%;
@@ -30,6 +28,8 @@ export const UserLogo = styled.img.attrs({
 export const HeaderTitle = styled.h1`
   font-family: 'Raleway', sans-serif;
   color: #3dd6d0;
+  margin-right: 20px;
+  margin-left: auto;
 `;
 
 export const LogoutButton = styled(IoIosLogOut).attrs({

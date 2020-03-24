@@ -11,7 +11,7 @@ import Users from '../components/Users';
 const { Provider } = Store;
 
 export default function Routes({ logged_in }) {
-  const store = useReducer(modules, { user: { logged_in } });
+  const store = useReducer(modules, { user: logged_in });
   return (
     <Provider value={store}>
       <Switch>

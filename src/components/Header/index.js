@@ -13,7 +13,7 @@ import {
 } from './styles';
 import history from '../../services/history';
 
-export default function Header() {
+export default function Header({ userName, UserIcon }) {
   const [, dispatch] = useContext(Store);
 
   async function handleLogout() {
@@ -33,7 +33,7 @@ export default function Header() {
       <LogoContainer>
         <UserLogo />
       </LogoContainer>
-      <HeaderTitle />
+      <HeaderTitle>Olá {userName}</HeaderTitle>
       <LogoutButton onClick={() => handleLogout()} />
     </Container>
   );
