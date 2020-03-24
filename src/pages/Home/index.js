@@ -23,7 +23,7 @@ export default function Home() {
 
   return (
     <>
-      {console.log(user)}
+      {console.log(image)}
       <Header userName={name} userIcon={image} />
       <Main>
         <Users skill="Psicóloga" name="Cátia" photo={user0} />
