@@ -9,7 +9,12 @@ import {
   UserLogo,
   LogoContainer,
   HeaderTitle,
-  LogoutButton,
+  EditMenuText,
+  EditIcon,
+  LogoutIcon,
+  LogoutText,
+  Menu,
+  MenuItem,
 } from './styles';
 import history from '../../services/history';
 
@@ -34,7 +39,16 @@ export default function Header({ userName, userIcon }) {
         <UserLogo userIcon={userIcon} />
       </LogoContainer>
       <HeaderTitle>Olá {userName}</HeaderTitle>
-      <LogoutButton onClick={() => handleLogout()} />
+      <Menu>
+        <MenuItem>
+          <EditMenuText>editar</EditMenuText>
+          <EditIcon />
+        </MenuItem>
+        <MenuItem onClick={() => handleLogout()}>
+          <LogoutText>sair</LogoutText>
+          <LogoutIcon />
+        </MenuItem>
+      </Menu>
     </Container>
   );
 }

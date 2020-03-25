@@ -12,9 +12,11 @@ import {
   UserMoreButton,
 } from './styles';
 
-export default function Users({ skill, name, photo }) {
+export default function Users({ data, handleClickedUser }) {
+  const { skill, name, photo } = data;
+
   return (
-    <Container>
+    <Container onClick={() => handleClickedUser(data)}>
       <UserLogoBox>
         <UserLogo src={photo} />
       </UserLogoBox>

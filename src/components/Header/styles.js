@@ -1,4 +1,4 @@
-import { IoIosLogOut } from 'react-icons/io';
+import { FiEdit, FiLogOut } from 'react-icons/fi';
 
 import styled from 'styled-components';
 
@@ -32,13 +32,43 @@ export const HeaderTitle = styled.h1`
   margin-left: auto;
 `;
 
-export const LogoutButton = styled(IoIosLogOut).attrs({
-  size: 30,
-})`
+export const Menu = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const MenuItem = styled.div`
   cursor: pointer;
-  width: 50px;
-  height: 50px;
-  padding: 5px;
-  border-radius: 5px;
-  color: #15b097;
+  padding: 1px 7px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  transition: 0.2s;
+
+  &:first-child {
+    margin-bottom: 10px;
+  }
+
+  &:hover {
+    background-color: #bee6e0;
+    font-weight: bold;
+  }
+`;
+
+export const LogoutIcon = styled(FiLogOut)`
+  margin-left: 10px;
+  color: #60b1a4;
+`;
+
+export const EditIcon = styled(FiEdit)`
+  margin-left: 10px;
+  color: #60b1a4;
+`;
+
+export const LogoutText = styled.p`
+  color: #60b1a4;
+`;
+
+export const EditMenuText = styled.p`
+  color: #60b1a4;
 `;
