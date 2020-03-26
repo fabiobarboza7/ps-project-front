@@ -28,8 +28,10 @@ export default function EditModal({
       }
     }
 
-    document.onkeydown = e => handleKeyPress(e);
-  }, [handleOpenEditModal]);
+    if (openModal) {
+      document.onkeydown = e => handleKeyPress(e);
+    }
+  }, [handleOpenEditModal, openModal]);
 
   return (
     <ModalContainer openModal={openModal}>

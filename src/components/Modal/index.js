@@ -28,8 +28,10 @@ export default function Modal({ openModal = false, handleOpenModal, data }) {
       }
     }
 
-    document.onkeydown = e => handleKeyPress(e);
-  }, [handleOpenModal]);
+    if (openModal) {
+      document.onkeydown = e => handleKeyPress(e);
+    }
+  }, [handleOpenModal, openModal]);
 
   return (
     <ModalContainer openModal={openModal}>

@@ -92,12 +92,12 @@ export default function Home() {
   const { name } = user.data;
   const { image } = user;
 
-  function handleOpenModal() {
-    setOpenModal(!openModal);
-  }
-
   function handleOpenEditModal() {
     setOpenEditModal(!openEditModal);
+  }
+
+  function handleOpenModal() {
+    setOpenModal(!openModal);
   }
 
   function handleClickedUser(_user) {
