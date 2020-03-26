@@ -15,9 +15,11 @@ import user7 from '../../assets/img/user7.png';
 import user8 from '../../assets/img/user8.png';
 import { Store } from '../../store';
 import Modal from '../../components/Modal';
+import EditModal from '../../components/Modal/editModal';
 
 export default function Home() {
   const [openModal, setOpenModal] = useState(false);
+  const [openEditModal, setOpenEditModal] = useState(false);
   const [clickedUser, setClickedUser] = useState({});
   const [users] = useState([
     {
@@ -92,18 +94,25 @@ export default function Home() {
 
   function handleOpenModal() {
     setOpenModal(!openModal);
-    console.log(1);
+  }
+
+  function handleOpenEditModal() {
+    setOpenEditModal(!openEditModal);
   }
 
   function handleClickedUser(_user) {
     setClickedUser({ ..._user });
     handleOpenModal();
-    console.log(0);
   }
 
   return (
     <>
-      <Header userName={name} userIcon={image} />,
+      <Header
+        userName={name}
+        userIcon={image}
+        handleOpenEditModal={handleOpenEditModal}
+      />
+      ,
       <Main>
         {users.map(_user => (
           <Users data={_user} handleClickedUser={handleClickedUser} />
@@ -113,6 +122,11 @@ export default function Home() {
         handleOpenModal={handleOpenModal}
         openModal={openModal}
         data={clickedUser}
+      />
+      <EditModal
+        handleOpenEditModal={handleOpenEditModal}
+        openModal={openEditModal}
+        data={{ name, photo: image }}
       />
     </>
   );

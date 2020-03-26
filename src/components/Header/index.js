@@ -18,7 +18,7 @@ import {
 } from './styles';
 import history from '../../services/history';
 
-export default function Header({ userName, userIcon }) {
+export default function Header({ userName, userIcon, handleOpenEditModal }) {
   const [, dispatch] = useContext(Store);
   console.log(userIcon);
   async function handleLogout() {
@@ -40,7 +40,7 @@ export default function Header({ userName, userIcon }) {
       </LogoContainer>
       <HeaderTitle>Olá {userName}</HeaderTitle>
       <Menu>
-        <MenuItem>
+        <MenuItem onClick={handleOpenEditModal}>
           <EditMenuText>editar</EditMenuText>
           <EditIcon />
         </MenuItem>
