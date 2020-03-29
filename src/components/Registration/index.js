@@ -7,7 +7,7 @@ import { userStatus } from '../../store/modules/users/actions';
 import Login from '../Login';
 import schema from './schema';
 import history from '../../services/history';
-// import { Container } from './styles';
+import Loading from '../Loading';
 import {
   Container,
   CreateForm,
@@ -21,11 +21,12 @@ import { userLogin } from '../../services/sessions.service';
 
 export default function Registration() {
   const [, dispatch] = useContext(Store);
+  const [loading, setLoading] = useState(false);
   const [userExists, setUserExists] = useState(false);
 
   async function handleSubmit(data) {
+    setLoading(true);
     try {
-      console.log(data);
       await userRegistration(data);
 
       const { name, email, password } = data;
@@ -37,6 +38,7 @@ export default function Registration() {
     } catch (error) {
       toast.error('Ops, houve algum erro, tente novamente');
     }
+    setLoading(false);
   }
 
   function handleLogin() {
@@ -69,8 +71,12 @@ export default function Registration() {
 
             <CreateInputImage type="file" name="image" required />
 
-            <CreateButton type="submit">
-              <CreateButtonName>CRIAR</CreateButtonName>
+            <CreateButton loading={loading} type="submit">
+              {loading ? (
+                <Loading />
+              ) : (
+                <CreateButtonName>CRIAR</CreateButtonName>
+              )}
             </CreateButton>
           </CreateForm>
           <GoToLogin onClick={handleLogin}>Já tenho conta, acessar</GoToLogin>

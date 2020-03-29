@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 
+import { toast } from 'react-toastify';
 import {
   ModalContainer,
   ModalHeader,
@@ -19,6 +20,8 @@ import {
   SendAdviserRequest,
   SendAdviserRequestText,
 } from './styles';
+import { adviserCreate } from '../../services/advisers.service';
+import schema from './schema';
 
 export default function Modal({ openModal = false, handleOpenModal, data }) {
   useEffect(() => {
@@ -32,6 +35,16 @@ export default function Modal({ openModal = false, handleOpenModal, data }) {
       document.onkeydown = e => handleKeyPress(e);
     }
   }, [handleOpenModal, openModal]);
+
+  async function handleSubmit(_data) {
+    const userTarget = { user_target: data.id };
+    try {
+      await adviserCreate({ ..._data, ...userTarget });
+      toast.success('Conselho enviado com sucesso, aguarde a resposta');
+    } catch (error) {
+      toast.error('Ops, houve algum erro, tente novamente');
+    }
+  }
 
   return (
     <ModalContainer openModal={openModal}>
@@ -58,8 +71,9 @@ export default function Modal({ openModal = false, handleOpenModal, data }) {
               </ModalInfoListItem>
             </ModalInfoList>
           </ModalInfo>
-          <ModalAdviserForm>
+          <ModalAdviserForm id="form" schema={schema} onSubmit={handleSubmit}>
             <ModalAdviserInput
+              type="text"
               name="message"
               placeholder="...descreva brevemente o conselho que busca"
               required

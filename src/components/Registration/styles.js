@@ -74,6 +74,7 @@ export const CreateButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: ${({ loading }) => loading && '#5bd63d'};
 
   &:hover {
     letter-spacing: 1px;

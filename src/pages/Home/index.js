@@ -23,6 +23,7 @@ export default function Home() {
   const [clickedUser, setClickedUser] = useState({});
   const [users] = useState([
     {
+      id: '1',
       skill: 'Psicóloga',
       name: 'Cátia',
       photo: user0,
@@ -30,6 +31,7 @@ export default function Home() {
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure doloremque vero ex, nihil autem, vitae doloribus, quo dolorem in distinctio eius numquam laboriosam sint? Odit inventore odio alias. Accusantium, eos.',
     },
     {
+      id: '2',
       skill: 'Terapeuta',
       name: 'João',
       photo: user6,
@@ -37,6 +39,7 @@ export default function Home() {
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure doloremque vero ex, nihil autem, vitae doloribus, quo dolorem in distinctio eius numquam laboriosam sint? Odit inventore odio alias. Accusantium, eos.',
     },
     {
+      id: '3',
       skill: 'Psiquiatra',
       name: 'Maria da Silva',
       photo: user1,
@@ -44,6 +47,7 @@ export default function Home() {
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure doloremque vero ex, nihil autem, vitae doloribus, quo dolorem in distinctio eius numquam laboriosam sint? Odit inventore odio alias. Accusantium, eos.',
     },
     {
+      id: '4',
       skill: 'Conselheiro',
       name: 'Catarina',
       photo: user2,
@@ -51,6 +55,7 @@ export default function Home() {
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure doloremque vero ex, nihil autem, vitae doloribus, quo dolorem in distinctio eius numquam laboriosam sint? Odit inventore odio alias. Accusantium, eos.',
     },
     {
+      id: '5',
       skill: 'Psiquiatra',
       name: 'Larissa',
       photo: user3,
@@ -58,6 +63,7 @@ export default function Home() {
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure doloremque vero ex, nihil autem, vitae doloribus, quo dolorem in distinctio eius numquam laboriosam sint? Odit inventore odio alias. Accusantium, eos.',
     },
     {
+      id: '6',
       skill: 'Terapeuta',
       name: 'Thaís',
       photo: user4,
@@ -65,6 +71,7 @@ export default function Home() {
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure doloremque vero ex, nihil autem, vitae doloribus, quo dolorem in distinctio eius numquam laboriosam sint? Odit inventore odio alias. Accusantium, eos.',
     },
     {
+      id: '7',
       skill: 'Psicanalista',
       name: 'César',
       photo: user5,
@@ -72,6 +79,7 @@ export default function Home() {
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure doloremque vero ex, nihil autem, vitae doloribus, quo dolorem in distinctio eius numquam laboriosam sint? Odit inventore odio alias. Accusantium, eos.',
     },
     {
+      id: '8',
       skill: 'Psiquiatra',
       name: 'Fábio Souza',
       photo: user8,
@@ -79,6 +87,7 @@ export default function Home() {
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure doloremque vero ex, nihil autem, vitae doloribus, quo dolorem in distinctio eius numquam laboriosam sint? Odit inventore odio alias. Accusantium, eos.',
     },
     {
+      id: '9',
       skill: 'Conselheiro',
       name: 'Letícia',
       photo: user7,
@@ -115,7 +124,11 @@ export default function Home() {
       ,
       <Main>
         {users.map(_user => (
-          <Users data={_user} handleClickedUser={handleClickedUser} />
+          <Users
+            key={_user.id.toString()}
+            data={_user}
+            handleClickedUser={handleClickedUser}
+          />
         ))}
       </Main>
       <Modal
